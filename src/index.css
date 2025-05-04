@@ -1,0 +1,100 @@
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 224 71.4% 4.1%;
+      --card: 0 0% 100%;
+      --card-foreground: 224 71.4% 4.1%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 224 71.4% 4.1%;
+      --primary: 240 5.9% 10%; /* Darker blue/black for primary text/elements */
+      --primary-foreground: 210 20% 98%;
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+      --accent: 240 4.8% 95.9%;
+      --accent-foreground: 240 5.9% 10%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 20% 98%;
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 240 5.1% 64.9%; /* Adjusted ring color */
+      --radius: 0.75rem; /* Slightly larger radius */
+
+      /* Custom Gradients */
+      --gradient-primary-start: #6366F1; /* Indigo-500 */
+      --gradient-primary-end: #8B5CF6;   /* Violet-500 */
+      --gradient-secondary-start: #EC4899; /* Pink-500 */
+      --gradient-secondary-end: #D946EF;  /* Fuchsia-500 */
+       --gradient-background-start: theme('colors.blue.50');
+       --gradient-background-end: theme('colors.purple.50');
+    }
+
+    .dark {
+      --background: 225 20% 10%; /* Dark slate blue */
+      --foreground: 210 20% 98%;
+      --card: 225 20% 13%; /* Slightly lighter dark slate */
+      --card-foreground: 210 20% 98%;
+      --popover: 225 20% 10%;
+      --popover-foreground: 210 20% 98%;
+      --primary: 210 20% 98%; /* Light primary for dark mode */
+      --primary-foreground: 225 20% 10%;
+      --secondary: 225 15% 20%; /* Darker secondary */
+      --secondary-foreground: 210 20% 98%;
+      --muted: 225 15% 20%;
+      --muted-foreground: 215 15% 65%;
+      --accent: 225 15% 25%; /* Accent slightly lighter */
+      --accent-foreground: 210 20% 98%;
+      --destructive: 0 70% 50%; /* Adjusted destructive */
+      --destructive-foreground: 210 20% 98%;
+      --border: 225 15% 25%;
+      --input: 225 15% 25%;
+      --ring: 210 20% 80%; /* Lighter ring for dark mode */
+
+      /* Custom Gradients Dark */
+      --gradient-primary-start: #4F46E5; /* Indigo-600 */
+      --gradient-primary-end: #7C3AED;   /* Violet-600 */
+      --gradient-secondary-start: #DB2777; /* Pink-600 */
+      --gradient-secondary-end: #C026D3;  /* Fuchsia-600 */
+      --gradient-background-start: theme('colors.gray.900');
+      --gradient-background-end: theme('colors.blue.950');
+    }
+
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-gradient-to-br from-[var(--gradient-background-start)] to-[var(--gradient-background-end)] text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+      }
+      html, body, #root {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+          line-height: 1.5;
+          font-weight: 400;
+          font-synthesis: none;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+      }
+    }
+
+    @layer components {
+      .glassmorphic-card {
+          @apply bg-card/60 backdrop-blur-lg border border-border/30 shadow-xl shadow-black/5;
+      }
+       .soft-shadow {
+          @apply shadow-[0_5px_15px_-3px_rgba(0,0,0,0.05),_0_4px_6px_-4px_rgba(0,0,0,0.05)];
+       }
+        .primary-gradient-text {
+             @apply bg-gradient-to-r from-[var(--gradient-primary-start)] to-[var(--gradient-primary-end)] bg-clip-text text-transparent;
+        }
+    }
+  
