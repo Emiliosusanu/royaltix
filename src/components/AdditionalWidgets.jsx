@@ -6,7 +6,7 @@
 
     function AdditionalWidgets({ data }) {
       if (!data) {
-        return <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">Loading additional data...</div>;
+        return <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8"></div>;
       }
 
       const {
